@@ -18,4 +18,4 @@
 
 <portlet:defineObjects />
 
-<h1>Peter_norbac - Proyecto UCWRT</h1>
+<h1>Peter_norbac </h1>
