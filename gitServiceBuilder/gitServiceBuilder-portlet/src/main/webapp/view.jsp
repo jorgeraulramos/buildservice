@@ -18,4 +18,4 @@
 
 <portlet:defineObjects />
 
-<h1>Peter_norbac - UCWRT - GITHUB - Repository</h1>
+<h1>Peter_norbac Repository</h1>
