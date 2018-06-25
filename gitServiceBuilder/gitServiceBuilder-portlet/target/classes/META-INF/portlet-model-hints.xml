@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.consistent.ucwrt.model.EntityAddress">
+		<field name="addressId" type="int" />
+		<field name="street" type="String" />
+		<field name="interiorNumber" type="int" />
+		<field name="exteriorNumber" type="int" />
+		<field name="clientId" type="int" />
+		<field name="municipalId" type="int" />
+		<field name="stateId" type="int" />
+		<field name="suburbId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityBrand">
+		<field name="brandId" type="int" />
+		<field name="brandName" type="String" />
+		<field name="brandDescription" type="String" />
+		<field name="brandRegistrationDate" type="Date" />
+		<field name="registerData" type="String" />
+		<field name="responsibleUser" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityBusinessBrand">
+		<field name="businessBrandName" type="String" />
+		<field name="descriptionBusinessBrand" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityClass">
+		<field name="classId" type="int" />
+		<field name="className" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityCustomer">
+		<field name="clientId" type="int" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="secondLastName" type="String" />
+		<field name="email" type="String" />
+		<field name="rfc" type="String" />
+		<field name="cellPhone" type="String" />
+		<field name="legalPersonality" type="String" />
+		<field name="personType" type="String" />
+		<field name="phone" type="String" />
+		<field name="registrationDate" type="Date" />
+		<field name="comments" type="String" />
+		<field name="dealerId" type="String" />
+		<field name="businessBrandName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityDealer">
+		<field name="dealerId" type="String" />
+		<field name="dealerName" type="String" />
+		<field name="guaranteed" type="String" />
+		<field name="generalManagerName" type="String" />
+		<field name="shareholderName" type="String" />
+		<field name="mailShareholder" type="String" />
+		<field name="mailGeneralManager" type="String" />
+		<field name="businessBrandName" type="String" />
+		<field name="zoneName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityDepartment">
+		<field name="departmentId" type="String" />
+		<field name="departmentName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityEmployees">
+		<field name="employeeId" type="int" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="secondLastName" type="String" />
+		<field name="marketStall" type="String" />
+		<field name="department" type="String" />
+		<field name="cellPhone" type="String" />
+		<field name="phone" type="String" />
+		<field name="email" type="String" />
+		<field name="certified" type="String" />
+		<field name="certifiedDate" type="Date" />
+		<field name="certificationNumber" type="String" />
+		<field name="registrationDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="comments" type="String" />
+		<field name="departmentId" type="String" />
+		<field name="employmentId" type="String" />
+		<field name="dealerId" type="String" />
+		<field name="businessBrandName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityEmployment">
+		<field name="employmentId" type="String" />
+		<field name="employmentName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityEquipment">
+		<field name="equipmentId" type="int" />
+		<field name="equipmentDescription" type="String" />
+		<field name="equipmentPurchasePrice" type="double" />
+		<field name="equipmentPurchasePriceDll" type="double" />
+		<field name="equipmentSalePrice" type="double" />
+		<field name="status" type="String" />
+		<field name="modelId" type="int" />
+		<field name="brandId" type="int" />
+		<field name="yearModel" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityEvent">
+		<field name="eventId" type="int" />
+		<field name="eventName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityGParameter">
+		<field name="parameterName" type="String" />
+		<field name="value" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityIntervalos">
+		<field name="startKilometer" type="int" />
+		<field name="finishKilometers" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityInventory">
+		<field name="inventoryId" type="int" />
+		<field name="dealerId" type="String" />
+		<field name="businessBrandName" type="String" />
+		<field name="versionId" type="int" />
+		<field name="yearModel" type="int" />
+		<field name="brandId" type="int" />
+		<field name="modelId" type="int" />
+		<field name="carExchange" type="String" />
+		<field name="chasis" type="String" />
+		<field name="kilometer" type="double" />
+		<field name="numberDoors" type="int" />
+		<field name="purchasePrice" type="double" />
+		<field name="damage" type="double" />
+		<field name="estimatedSalePrice" type="double" />
+		<field name="estimatedGrossProfit" type="double" />
+		<field name="dateAdmission" type="Date" />
+		<field name="selfCertified" type="String" />
+		<field name="inventoryRegistrationDate" type="Date" />
+		<field name="whatProcessDischarged" type="String" />
+		<field name="engineLiters" type="String" />
+		<field name="transmission" type="String" />
+		<field name="location" type="String" />
+		<field name="hp" type="int" />
+		<field name="carToConsignment" type="String" />
+		<field name="comments" type="String" />
+		<field name="status" type="String" />
+		<field name="color" type="String" />
+		<field name="daysSpentInventory" type="String" />
+		<field name="suggestedPricePurchase" type="double" />
+		<field name="suggestedSalePrice" type="double" />
+		<field name="versionPricePurchaseSale" type="int" />
+		<field name="statusName" type="String" />
+		<field name="sourceSupplyId" type="int" />
+		<field name="inventoryClasificationId" type="int" />
+		<field name="saleId" type="int" />
+		<field name="tradeInId" type="String" />
+		<field name="employeeId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityInventoryClasification">
+		<field name="inventoryClasificationId" type="int" />
+		<field name="inventoryClasification" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityModel">
+		<field name="modelId" type="int" />
+		<field name="brandId" type="int" />
+		<field name="yearModel" type="int" />
+		<field name="modelName" type="String" />
+		<field name="modelDescription" type="String" />
+		<field name="modelRegistrationDate" type="Date" />
+		<field name="modelRegisterData" type="String" />
+		<field name="modelResponsibleUser" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityMonthlySalesGoal">
+		<field name="year" type="int" />
+		<field name="dealerId" type="String" />
+		<field name="businessBrandName" type="String" />
+		<field name="descriptionMonthlyGoal" type="String" />
+		<field name="objectiveAnnual" type="int" />
+		<field name="januaryGoal" type="double" />
+		<field name="februaryGoal" type="double" />
+		<field name="marchGoal" type="double" />
+		<field name="aprilGoal" type="double" />
+		<field name="mayGoal" type="double" />
+		<field name="juneGoal" type="double" />
+		<field name="julyGoal" type="double" />
+		<field name="augustGoal" type="double" />
+		<field name="septemberGoal" type="double" />
+		<field name="octoberGoal" type="double" />
+		<field name="novemberGoal" type="double" />
+		<field name="decemberGoal" type="double" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityMunicipality">
+		<field name="municipalId" type="int" />
+		<field name="municipalName" type="String" />
+		<field name="stateId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityProspection">
+		<field name="prospectionId" type="int" />
+		<field name="prospectionName" type="String" />
+		<field name="eventId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntitySale">
+		<field name="saleId" type="int" />
+		<field name="confirmBySale" type="String" />
+		<field name="deliveryDate" type="Date" />
+		<field name="assurantCertificate" type="String" />
+		<field name="extendedWarranty" type="String" />
+		<field name="realGrossProfit" type="double" />
+		<field name="finalSalePrice" type="double" />
+		<field name="clientId" type="int" />
+		<field name="employeeId" type="int" />
+		<field name="salesPlaceId" type="int" />
+		<field name="prospectionId" type="int" />
+		<field name="wayPayId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntitySalesPlace">
+		<field name="salesPlaceId" type="int" />
+		<field name="salePlaceName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntitySourceOfSupply">
+		<field name="sourceSupplyId" type="int" />
+		<field name="sourceOfSupply" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityState">
+		<field name="stateId" type="int" />
+		<field name="stateName" type="String" />
+		<field name="capitalName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityStatus">
+		<field name="statusName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntitySuburb">
+		<field name="suburbId" type="int" />
+		<field name="suburbName" type="String" />
+		<field name="postalCode" type="String" />
+		<field name="municipalId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityVersionAuto">
+		<field name="versionId" type="int" />
+		<field name="versionName" type="String" />
+		<field name="versionRegistrationDate" type="Date" />
+		<field name="versionResponsibleUser" type="String" />
+		<field name="versionRegisterData" type="String" />
+		<field name="purchasePrice" type="double" />
+		<field name="salePrice" type="double" />
+		<field name="purchasePriceDll" type="double" />
+		<field name="typeload" type="String" />
+		<field name="colorName" type="String" />
+		<field name="modelId" type="int" />
+		<field name="brandId" type="int" />
+		<field name="yearModel" type="int" />
+		<field name="classId" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityVersionEquipment">
+		<field name="equipmentId" type="int" />
+		<field name="versionId" type="int" />
+		<field name="modelId" type="int" />
+		<field name="brandName" type="String" />
+		<field name="yearModel" type="int" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityWayToPay">
+		<field name="wayPayId" type="int" />
+		<field name="payName" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityYearModel">
+		<field name="yearModel" type="int" />
+		<field name="yearModelRegistrationDate" type="Date" />
+		<field name="yearModelRegisterData" type="String" />
+		<field name="yModelResponsibleUser" type="String" />
+		<field name="yearModelDescription" type="String" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityYearModelClass">
+		<field name="classId" type="int" />
+		<field name="yearModel" type="int" />
+		<field name="startKilometer" type="int" />
+		<field name="finishKilometers" type="int" />
+		<field name="price" type="double" />
+	</model>
+	<model name="com.consistent.ucwrt.model.EntityZone">
+		<field name="zoneName" type="String" />
+		<field name="descriptionZone" type="String" />
+		<field name="userZoneManager" type="String" />
+		<field name="userSalesAreaManager" type="String" />
+		<field name="userRegionalAreaManager" type="String" />
+	</model>
+</model-hints>

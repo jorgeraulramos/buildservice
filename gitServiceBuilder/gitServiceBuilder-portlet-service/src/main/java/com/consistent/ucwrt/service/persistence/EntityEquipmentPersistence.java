@@ -1,0 +1,207 @@
+package com.consistent.ucwrt.service.persistence;
+
+import com.consistent.ucwrt.model.EntityEquipment;
+
+import com.liferay.portal.service.persistence.BasePersistence;
+
+/**
+ * The persistence interface for the entity equipment service.
+ *
+ * <p>
+ * Caching information and settings can be found in <code>portal.properties</code>
+ * </p>
+ *
+ * @author Brian Wing Shun Chan
+ * @see EntityEquipmentPersistenceImpl
+ * @see EntityEquipmentUtil
+ * @generated
+ */
+public interface EntityEquipmentPersistence extends BasePersistence<EntityEquipment> {
+    /*
+     * NOTE FOR DEVELOPERS:
+     *
+     * Never modify or reference this interface directly. Always use {@link EntityEquipmentUtil} to access the entity equipment persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
+     */
+
+    /**
+    * Returns the entity equipment where equipmentId = &#63; or throws a {@link com.consistent.ucwrt.NoSuchEntityEquipmentException} if it could not be found.
+    *
+    * @param equipmentId the equipment ID
+    * @return the matching entity equipment
+    * @throws com.consistent.ucwrt.NoSuchEntityEquipmentException if a matching entity equipment could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment findByEquipmentById(
+        int equipmentId)
+        throws com.consistent.ucwrt.NoSuchEntityEquipmentException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the entity equipment where equipmentId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+    *
+    * @param equipmentId the equipment ID
+    * @return the matching entity equipment, or <code>null</code> if a matching entity equipment could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment fetchByEquipmentById(
+        int equipmentId)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the entity equipment where equipmentId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+    *
+    * @param equipmentId the equipment ID
+    * @param retrieveFromCache whether to use the finder cache
+    * @return the matching entity equipment, or <code>null</code> if a matching entity equipment could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment fetchByEquipmentById(
+        int equipmentId, boolean retrieveFromCache)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Removes the entity equipment where equipmentId = &#63; from the database.
+    *
+    * @param equipmentId the equipment ID
+    * @return the entity equipment that was removed
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment removeByEquipmentById(
+        int equipmentId)
+        throws com.consistent.ucwrt.NoSuchEntityEquipmentException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the number of entity equipments where equipmentId = &#63;.
+    *
+    * @param equipmentId the equipment ID
+    * @return the number of matching entity equipments
+    * @throws SystemException if a system exception occurred
+    */
+    public int countByEquipmentById(int equipmentId)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Caches the entity equipment in the entity cache if it is enabled.
+    *
+    * @param entityEquipment the entity equipment
+    */
+    public void cacheResult(
+        com.consistent.ucwrt.model.EntityEquipment entityEquipment);
+
+    /**
+    * Caches the entity equipments in the entity cache if it is enabled.
+    *
+    * @param entityEquipments the entity equipments
+    */
+    public void cacheResult(
+        java.util.List<com.consistent.ucwrt.model.EntityEquipment> entityEquipments);
+
+    /**
+    * Creates a new entity equipment with the primary key. Does not add the entity equipment to the database.
+    *
+    * @param equipmentId the primary key for the new entity equipment
+    * @return the new entity equipment
+    */
+    public com.consistent.ucwrt.model.EntityEquipment create(int equipmentId);
+
+    /**
+    * Removes the entity equipment with the primary key from the database. Also notifies the appropriate model listeners.
+    *
+    * @param equipmentId the primary key of the entity equipment
+    * @return the entity equipment that was removed
+    * @throws com.consistent.ucwrt.NoSuchEntityEquipmentException if a entity equipment with the primary key could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment remove(int equipmentId)
+        throws com.consistent.ucwrt.NoSuchEntityEquipmentException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    public com.consistent.ucwrt.model.EntityEquipment updateImpl(
+        com.consistent.ucwrt.model.EntityEquipment entityEquipment)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the entity equipment with the primary key or throws a {@link com.consistent.ucwrt.NoSuchEntityEquipmentException} if it could not be found.
+    *
+    * @param equipmentId the primary key of the entity equipment
+    * @return the entity equipment
+    * @throws com.consistent.ucwrt.NoSuchEntityEquipmentException if a entity equipment with the primary key could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment findByPrimaryKey(
+        int equipmentId)
+        throws com.consistent.ucwrt.NoSuchEntityEquipmentException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the entity equipment with the primary key or returns <code>null</code> if it could not be found.
+    *
+    * @param equipmentId the primary key of the entity equipment
+    * @return the entity equipment, or <code>null</code> if a entity equipment with the primary key could not be found
+    * @throws SystemException if a system exception occurred
+    */
+    public com.consistent.ucwrt.model.EntityEquipment fetchByPrimaryKey(
+        int equipmentId)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns all the entity equipments.
+    *
+    * @return the entity equipments
+    * @throws SystemException if a system exception occurred
+    */
+    public java.util.List<com.consistent.ucwrt.model.EntityEquipment> findAll()
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns a range of all the entity equipments.
+    *
+    * <p>
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.consistent.ucwrt.model.impl.EntityEquipmentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * </p>
+    *
+    * @param start the lower bound of the range of entity equipments
+    * @param end the upper bound of the range of entity equipments (not inclusive)
+    * @return the range of entity equipments
+    * @throws SystemException if a system exception occurred
+    */
+    public java.util.List<com.consistent.ucwrt.model.EntityEquipment> findAll(
+        int start, int end)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns an ordered range of all the entity equipments.
+    *
+    * <p>
+    * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.consistent.ucwrt.model.impl.EntityEquipmentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+    * </p>
+    *
+    * @param start the lower bound of the range of entity equipments
+    * @param end the upper bound of the range of entity equipments (not inclusive)
+    * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+    * @return the ordered range of entity equipments
+    * @throws SystemException if a system exception occurred
+    */
+    public java.util.List<com.consistent.ucwrt.model.EntityEquipment> findAll(
+        int start, int end,
+        com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Removes all the entity equipments from the database.
+    *
+    * @throws SystemException if a system exception occurred
+    */
+    public void removeAll()
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Returns the number of entity equipments.
+    *
+    * @return the number of entity equipments
+    * @throws SystemException if a system exception occurred
+    */
+    public int countAll()
+        throws com.liferay.portal.kernel.exception.SystemException;
+}

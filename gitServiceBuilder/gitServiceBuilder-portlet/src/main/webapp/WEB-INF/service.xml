@@ -1,0 +1,405 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.consistent.ucwrt">
+	<namespace>gitServiceBuilder</namespace>
+	<entity name="EntityCustomer" table="Customer" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="clientId" type="int" primary="true"></column>
+		<column name="firstName" type="String"></column>
+		<column name="lastName" type="String"></column>
+		<column name="secondLastName" type="String"></column>
+		<column name="email" type="String"></column>
+		<column name="rfc" type="String"></column>
+		<column name="cellPhone" type="String"></column>
+		<column name="legalPersonality" type="String"></column>
+		<column name="personType" type="String"></column>
+		<column name="phone" type="String"></column>
+		<column name="registrationDate" type="Date"></column>
+		<column name="comments" type="String"></column>
+		<!-- Foreign Keys -->
+		<column name="dealerId" type="String" />
+		<column name="businessBrandName" type="String" />
+		<!-- Finders -->
+		<finder name="getRFC" return-type="EntityCustomer">
+			<finder-column name="rfc" comparator="=" />
+		</finder>
+		<finder name="Customer" return-type="Collection">
+			<finder-column name="dealerId" />
+		</finder>
+	</entity>
+	
+	<entity name="EntityState" table="State" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="stateId" type="int" primary="true"></column>
+		<column name="stateName" type="String"></column>
+		<column name="capitalName" type="String"></column>
+	</entity>
+	
+	<entity name="EntityMunicipality" table="Municipality" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="municipalId" type="int" primary="true"></column>
+		<column name="municipalName" type="String"></column>
+		<!-- Foreign Keys -->
+		<column name="stateId" type="int"></column>
+		<finder name="MunicipalityByState" return-type="Collection">
+			<finder-column name="stateId"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EntitySuburb" table="Suburb" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="suburbId" type="int" primary="true"></column>
+		<column name="suburbName" type="String"></column>
+		<column name="postalCode" type="String"></column>
+		<!-- Foreign Keys -->
+		<column name="municipalId" type="int"></column>
+		<!-- Finders -->
+		<finder name="SuburbByState" return-type="Collection">
+			<finder-column name="municipalId"></finder-column>
+		</finder>
+		<finder name="PostalCodeBySuburb" return-type="Collection">
+			<finder-column name="suburbId"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EntityAddress" table="Address" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="addressId" type="int" primary="true"></column>
+		<column name="street" type="String"></column>
+		<column name="interiorNumber" type="int"></column>
+		<column name="exteriorNumber" type="int"></column>
+		<!-- Foreign Keys -->
+		<column name="clientId" type="int"></column>
+		<column name="municipalId" type="int"></column>
+		<column name="stateId" type="int"></column>
+		<column name="suburbId" type="int"></column>
+		<!-- Finders -->
+		<finder name="AddressByClientId" return-type="Collection">
+			<finder-column name="clientId" comparator="="></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EntityInventoryClasification" table="InventoryClasification" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="inventoryClasificationId" type="int" primary="true"></column>
+		<column name="inventoryClasification" type="String"></column>
+	</entity>
+	
+	<entity name="EntitySourceOfSupply" table="SourceOfSupply" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="sourceSupplyId" type="int" primary="true"></column>
+		<column name="sourceOfSupply" type="String"></column>
+	</entity>
+	
+	<entity name="EntityBusinessBrand" table="BusinessBrand" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="businessBrandName" type="String" primary="true"></column>
+		<column name="descriptionBusinessBrand" type="String"></column>
+		<finder name="BusinessBrandByBusinessBrandName" return-type="BusinessBrand">
+			<finder-column name="businessBrandName"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EntityZone" table="Zone" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="zoneName" type="String" primary="true"></column>
+		<column name="descriptionZone" type="String"></column>
+		<column name="userZoneManager" type="String"></column>
+		<column name="userSalesAreaManager" type="String"></column>
+		<column name="userRegionalAreaManager" type="String"></column>
+	</entity>
+	
+	<entity name="EntityDealer" table="Dealer" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+		<column name="dealerId" type="String" primary="true"></column>
+		<column name="dealerName" type="String"></column>
+		<column name="guaranteed" type="String"></column>
+		<column name="generalManagerName" type="String"></column>
+		<column name="shareholderName" type="String"></column>
+		<column name="mailShareholder" type="String"></column>
+		<column name="mailGeneralManager" type="String"></column>
+		<!-- Foreign Keys -->
+		<column name="businessBrandName" type="String"></column>
+		<column name="zoneName" type="String"></column>
+		<!-- Finders -->
+		<finder name="DealerByDealerId" return-type="Collection">
+			<finder-column name="dealerId"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EntityBrand" table="Brand" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <column name="brandId" type="int" primary="true" />
+        <column name="brandName" type="String" />
+        <column name="brandDescription" type="String" />
+        <column name="brandRegistrationDate" type="Date" />
+        <column name="registerData" type="String"/>
+        <column name="responsibleUser" type="String"/>
+        <!-- Finders -->
+        <finder name="findBrand" return-type="Brand"  unique="true">
+        	<finder-column name="brandId"></finder-column>
+        </finder>
+     </entity>
+     
+     <entity name="EntityYearModel" table="YearModel" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory">
+        <column name="yearModel" type="int" primary="true"/>
+        <column name="yearModelRegistrationDate" type="Date"/>
+        <column name="yearModelRegisterData" type="String"/>
+        <column name="yModelResponsibleUser" type="String"/>
+        <column name="yearModelDescription" type="String"/>
+    </entity>
+    
+    <entity name="EntityModel" table="Model" local-service="true" remote-service="true" cache-enabled="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory">
+    	<column name="modelId" type="int" primary="true"/>
+    	<!-- Foreign Keys -->
+    	<column name="brandId" type="int" primary="true"/>
+        <column name="yearModel" type="int" primary="true"/>
+        
+        <column name="modelName" type="String"/>
+        <column name="modelDescription" type="String"/> 
+        <column name="modelRegistrationDate" type="Date"/>
+        <column name="modelRegisterData" type="String"/>
+        <column name="modelResponsibleUser" type="String"/>
+         <!-- Finders -->
+        <finder name="BrandId" return-type="Collection" >
+            <finder-column name="brandId"></finder-column>
+        </finder>
+        <finder name="ModelName" return-type="Collection" >
+            <finder-column name="modelName"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="EntityClass" table="Class" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <column name="classId" type="int" primary="true"/>
+        <column name="className" type="String"/>
+        
+        <!-- Finders -->
+        <finder name="ClassName" return-type="Class" unique="true">
+        	<finder-column name="className"></finder-column>
+        </finder>
+        <finder name="ClassId" return-type="Class" unique="true">
+        	<finder-column name="classId"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="EntityVersionAuto" table="Version" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <column name="versionId" type="int" primary="true"/>
+        
+        <column name="versionName" type="String" />
+        <column name="versionRegistrationDate" type="Date" />
+        <column name="versionResponsibleUser" type="String" />
+        <column name="versionRegisterData" type="String" />
+        <column name="purchasePrice" type="double" />
+        <column name="salePrice" type="double" />
+        <column name="purchasePriceDll" type="double" />
+        <column name="typeload" type="String" />
+        <column name="colorName" type="String" />
+        
+        <!-- Foreign Keys -->
+        <column name="modelId" type="int" primary="true"/>
+        <column name="brandId" type="int" primary="true"/>
+        <column name="yearModel" type="int" primary="true"/>
+        <column name="classId" type="int" />
+        
+        <!-- Finders -->
+        <finder name="Version" return-type="Version" unique="true">
+        	<finder-column name="versionName"></finder-column>
+        	<finder-column name="purchasePrice"></finder-column>
+        	<finder-column name="salePrice"></finder-column>
+        	<finder-column name="modelId"></finder-column>
+        	<finder-column name="brandId"></finder-column>
+        	<finder-column name="yearModel"></finder-column>
+        	<finder-column name="classId"></finder-column>
+        </finder>
+        <finder name="BrandModel" return-type="Collection">
+        	<finder-column name="brandId"></finder-column>
+            <finder-column name="modelId"></finder-column>
+        </finder>
+        <finder name="BrandModelYear" return-type="Collection">
+        	<finder-column name="brandId"></finder-column>
+            <finder-column name="modelId"></finder-column>
+            <finder-column name="yearModel"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="EntityEquipment" table="Equipment" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="equipmentId" type="int" primary="true"/>
+    	<column name="equipmentDescription" type="String"/>
+    	<column name="equipmentPurchasePrice" type="double"/>
+    	<column name="equipmentPurchasePriceDll" type="double"/>
+    	<column name="equipmentSalePrice" type="double"/>
+    	<column name="status" type="String"/>
+    	<!-- Foreign Keys -->
+    	<column name="modelId" type="int"/>
+    	<column name="brandId" type="int"/>
+        <column name="yearModel" type="int"/>
+        <!-- Finders -->
+        <finder name="EquipmentById" return-type="Equipment" unique="true">
+        	<finder-column name="equipmentId"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="EntityVersionEquipment" table="VersionEquipment" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <!-- Foreign Keys -->
+        <column name="equipmentId" type="int" primary="true"/>
+        <column name="versionId" type="int" primary="true"/>
+        <column name="modelId" type="int" primary="true"/>
+        <column name="brandName" type="String" primary="true" />
+        <column name="yearModel" type="int" primary="true"/>
+    </entity>
+    
+    <entity name="EntityIntervalos" table="Intervalos" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <column name="startKilometer" type="int" primary="true"/>
+        <column name="finishKilometers" type="int" primary="true"/>
+    </entity>
+    
+    <entity name="EntityYearModelClass" table="YearModelClass" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+        <!-- Foreign Keys -->
+        <column name="classId" type="int" primary="true"/>
+        <column name="yearModel" type="int" primary="true"/>
+        <column name="startKilometer" type="int" primary="true"/>
+        <column name="finishKilometers" type="int" primary="true"/>
+        <column name="price" type="double"/>
+    </entity>
+     
+    <entity name="EntityMonthlySalesGoal" table="MonthlySalesGoal" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory">
+        <column name="year" type="int" primary="true"/>
+        <column name="dealerId" type="String" primary="true"/>
+        <column name="businessBrandName" type="String" primary="true"/>
+        <column name="descriptionMonthlyGoal" type="String"></column>
+        <column name="objectiveAnnual" type="int"></column>
+        <column name="januaryGoal" type="double" ></column>
+        <column name="februaryGoal" type="double" ></column>
+        <column name="marchGoal" type="double"></column>
+        <column name="aprilGoal" type="double"></column>
+        <column name="mayGoal" type="double"></column>
+        <column name="juneGoal" type="double"></column>
+        <column name="julyGoal" type="double"></column>
+        <column name="augustGoal" type="double" ></column>
+        <column name="septemberGoal" type="double" ></column>
+        <column name="octoberGoal" type="double" ></column>
+        <column name="novemberGoal" type="double" ></column>
+        <column name="decemberGoal" type="double"></column>
+    </entity>
+    
+    <entity name="EntityStatus" table="Status" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="statusName" type="String" primary="true"/>
+    </entity>
+     
+     <entity name="EntityGParameter" table="GParameter" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" tx-manager="ucwrtTransactionManager">
+        <column name="parameterName" type="String" primary="true" />
+        <column name="value" type="String" />
+        <column name="description" type="String" />
+    </entity>
+    
+    <entity name="EntityEmployment" table="Employment" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="employmentId" type="String" primary="true" />
+    	<column name="employmentName" type="String" primary="true" />
+    </entity>
+    
+    <entity name="EntityDepartment" table="Department" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="departmentId" type="String" primary="true" />
+    	<column name="departmentName" type="String" primary="true" />
+    </entity>
+    
+    <entity name="EntityEmployees" table="Employees" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="employeeId" type="int" primary="true" />
+    	<column name="firstName" type="String" />
+    	<column name="lastName" type="String"  />
+    	<column name="secondLastName" type="String" />
+    	<column name="marketStall" type="String" />
+    	<column name="department" type="String" />
+    	<column name="cellPhone" type="String" />
+    	<column name="phone" type="String" />
+    	<column name="email" type="String" />
+    	<column name="certified" type="String" />
+    	<column name="certifiedDate" type="Date" />
+    	<column name="certificationNumber" type="String" />
+    	<column name="registrationDate" type="Date" />
+    	<column name="status" type="String" />
+    	<column name="comments" type="String" />
+    	<!-- Foreign Keys -->
+        <column name="departmentId" type="String" />
+        <column name="employmentId" type="String" />
+        <column name="dealerId" type="String" />
+        <column name="businessBrandName" type="String" />
+        <!-- Finders -->
+        <finder name="Employees" return-type="Collection" >
+        	<finder-column name="dealerId" />
+        	<finder-column name="businessBrandName" />
+        </finder>
+    </entity>
+    
+    <entity name="EntityInventory" table="Inventory" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="inventoryId" type="int" primary="true" />
+    	<column name="dealerId" type="String" primary="true" />
+    	<column name="businessBrandName" type="String" primary="true" />
+    	<column name="versionId" type="int" primary="true" />
+    	<column name="yearModel" type="int" primary="true" />
+    	<column name="brandId" type="int" primary="true" />
+    	<column name="modelId" type="int" primary="true" />
+    	
+    	<column name="carExchange" type="String" />
+    	<column name="chasis" type="String" />
+    	<column name="kilometer" type="double" />
+    	<column name="numberDoors" type="int" />
+    	<column name="purchasePrice" type="double" />
+    	<column name="damage" type="double" />
+    	<column name="estimatedSalePrice" type="double" />
+    	<column name="estimatedGrossProfit" type="double" />
+    	<column name="dateAdmission" type="Date" />
+    	<column name="selfCertified" type="String" />
+    	<column name="inventoryRegistrationDate" type="Date" />
+    	<column name="whatProcessDischarged" type="String" />
+    	<column name="engineLiters" type="String" />
+    	<column name="transmission" type="String" />
+    	<column name="location" type="String" />
+    	<column name="hp" type="int" />
+    	<column name="carToConsignment" type="String" />
+    	<column name="comments" type="String" />
+    	<column name="status" type="String" />
+    	<column name="color" type="String" />
+    	<column name="daysSpentInventory" type="String" />
+    	<column name="suggestedPricePurchase" type="double" />
+    	<column name="suggestedSalePrice" type="double" />
+    	<column name="versionPricePurchaseSale" type="int" />
+    	<!-- Foreign Keys -->
+    	<column name="statusName" type="String"  />
+    	<column name="sourceSupplyId" type="int"  />
+    	<column name="inventoryClasificationId" type="int" />
+    	<column name="saleId" type="int" />
+    	<column name="tradeInId" type="String" />
+    	<column name="employeeId" type="int" />
+    	<!-- Finders -->
+        <finder name="findInventory" return-type="Collection" >
+        	<finder-column name="dealerId"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="EntityWayToPay" table="WayToPay" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="wayPayId" type="int" primary="true" />
+    	<column name="payName" type="String"  />
+    </entity>
+    
+    <entity name="EntitySalesPlace" table="SalesPlace" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="salesPlaceId" type="int" primary="true" />
+    	<column name="salePlaceName" type="String"  />
+    </entity>
+    
+    <entity name="EntityEvent" table="Event" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="eventId" type="int" primary="true" />
+    	<column name="eventName" type="String"  />
+    </entity>
+    
+    <entity name="EntityProspection" table="Prospection" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" >
+    	<column name="prospectionId" type="int" primary="true" />
+    	<column name="prospectionName" type="String"  />
+    	<!-- Foreign Keys -->
+        <column name="eventId" type="int" />
+    </entity>
+    
+    <entity name="EntitySale" table="Sale" local-service="true" remote-service="true" data-source="ucwrtDataSource" session-factory="ucwrtSessionFactory" cache-enabled="false">
+    	<column name="saleId" type="int" primary="true" />
+    	<column name="confirmBySale" type="String" />
+    	<column name="deliveryDate" type="Date" />
+    	<column name="assurantCertificate" type="String" />
+    	<column name="extendedWarranty" type="String" />
+    	<column name="realGrossProfit" type="double" />
+    	<column name="finalSalePrice" type="double" />
+    	<!-- Foreign Keys -->
+        <column name="clientId" type="int" />
+        <column name="employeeId" type="int" />
+    	<column name="salesPlaceId" type="int" />
+    	<column name="prospectionId" type="int" />
+    	<column name="wayPayId" type="int" />
+    </entity>
+</service-builder>

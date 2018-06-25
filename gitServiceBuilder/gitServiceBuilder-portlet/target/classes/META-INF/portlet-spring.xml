@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.consistent.ucwrt.service.EntityAddressLocalService" class="com.consistent.ucwrt.service.impl.EntityAddressLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityAddressService" class="com.consistent.ucwrt.service.impl.EntityAddressServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityAddressPersistence" class="com.consistent.ucwrt.service.persistence.EntityAddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityBrandLocalService" class="com.consistent.ucwrt.service.impl.EntityBrandLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityBrandService" class="com.consistent.ucwrt.service.impl.EntityBrandServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityBrandPersistence" class="com.consistent.ucwrt.service.persistence.EntityBrandPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityBusinessBrandLocalService" class="com.consistent.ucwrt.service.impl.EntityBusinessBrandLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityBusinessBrandService" class="com.consistent.ucwrt.service.impl.EntityBusinessBrandServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityBusinessBrandPersistence" class="com.consistent.ucwrt.service.persistence.EntityBusinessBrandPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityClassLocalService" class="com.consistent.ucwrt.service.impl.EntityClassLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityClassService" class="com.consistent.ucwrt.service.impl.EntityClassServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityClassPersistence" class="com.consistent.ucwrt.service.persistence.EntityClassPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityCustomerLocalService" class="com.consistent.ucwrt.service.impl.EntityCustomerLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityCustomerService" class="com.consistent.ucwrt.service.impl.EntityCustomerServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityCustomerPersistence" class="com.consistent.ucwrt.service.persistence.EntityCustomerPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityDealerLocalService" class="com.consistent.ucwrt.service.impl.EntityDealerLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityDealerService" class="com.consistent.ucwrt.service.impl.EntityDealerServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityDealerPersistence" class="com.consistent.ucwrt.service.persistence.EntityDealerPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityDepartmentLocalService" class="com.consistent.ucwrt.service.impl.EntityDepartmentLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityDepartmentService" class="com.consistent.ucwrt.service.impl.EntityDepartmentServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityDepartmentPersistence" class="com.consistent.ucwrt.service.persistence.EntityDepartmentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityEmployeesLocalService" class="com.consistent.ucwrt.service.impl.EntityEmployeesLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityEmployeesService" class="com.consistent.ucwrt.service.impl.EntityEmployeesServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityEmployeesPersistence" class="com.consistent.ucwrt.service.persistence.EntityEmployeesPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityEmploymentLocalService" class="com.consistent.ucwrt.service.impl.EntityEmploymentLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityEmploymentService" class="com.consistent.ucwrt.service.impl.EntityEmploymentServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityEmploymentPersistence" class="com.consistent.ucwrt.service.persistence.EntityEmploymentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityEquipmentLocalService" class="com.consistent.ucwrt.service.impl.EntityEquipmentLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityEquipmentService" class="com.consistent.ucwrt.service.impl.EntityEquipmentServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityEquipmentPersistence" class="com.consistent.ucwrt.service.persistence.EntityEquipmentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityEventLocalService" class="com.consistent.ucwrt.service.impl.EntityEventLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityEventService" class="com.consistent.ucwrt.service.impl.EntityEventServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityEventPersistence" class="com.consistent.ucwrt.service.persistence.EntityEventPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityGParameterLocalService" class="com.consistent.ucwrt.service.impl.EntityGParameterLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityGParameterService" class="com.consistent.ucwrt.service.impl.EntityGParameterServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityGParameterPersistence" class="com.consistent.ucwrt.service.persistence.EntityGParameterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityIntervalosLocalService" class="com.consistent.ucwrt.service.impl.EntityIntervalosLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityIntervalosService" class="com.consistent.ucwrt.service.impl.EntityIntervalosServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityIntervalosPersistence" class="com.consistent.ucwrt.service.persistence.EntityIntervalosPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityInventoryLocalService" class="com.consistent.ucwrt.service.impl.EntityInventoryLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityInventoryService" class="com.consistent.ucwrt.service.impl.EntityInventoryServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityInventoryPersistence" class="com.consistent.ucwrt.service.persistence.EntityInventoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityInventoryClasificationLocalService" class="com.consistent.ucwrt.service.impl.EntityInventoryClasificationLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityInventoryClasificationService" class="com.consistent.ucwrt.service.impl.EntityInventoryClasificationServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityInventoryClasificationPersistence" class="com.consistent.ucwrt.service.persistence.EntityInventoryClasificationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityModelLocalService" class="com.consistent.ucwrt.service.impl.EntityModelLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityModelService" class="com.consistent.ucwrt.service.impl.EntityModelServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityModelPersistence" class="com.consistent.ucwrt.service.persistence.EntityModelPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityMonthlySalesGoalLocalService" class="com.consistent.ucwrt.service.impl.EntityMonthlySalesGoalLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityMonthlySalesGoalService" class="com.consistent.ucwrt.service.impl.EntityMonthlySalesGoalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityMonthlySalesGoalPersistence" class="com.consistent.ucwrt.service.persistence.EntityMonthlySalesGoalPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityMunicipalityLocalService" class="com.consistent.ucwrt.service.impl.EntityMunicipalityLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityMunicipalityService" class="com.consistent.ucwrt.service.impl.EntityMunicipalityServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityMunicipalityPersistence" class="com.consistent.ucwrt.service.persistence.EntityMunicipalityPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityProspectionLocalService" class="com.consistent.ucwrt.service.impl.EntityProspectionLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityProspectionService" class="com.consistent.ucwrt.service.impl.EntityProspectionServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityProspectionPersistence" class="com.consistent.ucwrt.service.persistence.EntityProspectionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntitySaleLocalService" class="com.consistent.ucwrt.service.impl.EntitySaleLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntitySaleService" class="com.consistent.ucwrt.service.impl.EntitySaleServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntitySalePersistence" class="com.consistent.ucwrt.service.persistence.EntitySalePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntitySalesPlaceLocalService" class="com.consistent.ucwrt.service.impl.EntitySalesPlaceLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntitySalesPlaceService" class="com.consistent.ucwrt.service.impl.EntitySalesPlaceServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntitySalesPlacePersistence" class="com.consistent.ucwrt.service.persistence.EntitySalesPlacePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntitySourceOfSupplyLocalService" class="com.consistent.ucwrt.service.impl.EntitySourceOfSupplyLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntitySourceOfSupplyService" class="com.consistent.ucwrt.service.impl.EntitySourceOfSupplyServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntitySourceOfSupplyPersistence" class="com.consistent.ucwrt.service.persistence.EntitySourceOfSupplyPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityStateLocalService" class="com.consistent.ucwrt.service.impl.EntityStateLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityStateService" class="com.consistent.ucwrt.service.impl.EntityStateServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityStatePersistence" class="com.consistent.ucwrt.service.persistence.EntityStatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityStatusLocalService" class="com.consistent.ucwrt.service.impl.EntityStatusLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityStatusService" class="com.consistent.ucwrt.service.impl.EntityStatusServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityStatusPersistence" class="com.consistent.ucwrt.service.persistence.EntityStatusPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntitySuburbLocalService" class="com.consistent.ucwrt.service.impl.EntitySuburbLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntitySuburbService" class="com.consistent.ucwrt.service.impl.EntitySuburbServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntitySuburbPersistence" class="com.consistent.ucwrt.service.persistence.EntitySuburbPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityVersionAutoLocalService" class="com.consistent.ucwrt.service.impl.EntityVersionAutoLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityVersionAutoService" class="com.consistent.ucwrt.service.impl.EntityVersionAutoServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityVersionAutoPersistence" class="com.consistent.ucwrt.service.persistence.EntityVersionAutoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityVersionEquipmentLocalService" class="com.consistent.ucwrt.service.impl.EntityVersionEquipmentLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityVersionEquipmentService" class="com.consistent.ucwrt.service.impl.EntityVersionEquipmentServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityVersionEquipmentPersistence" class="com.consistent.ucwrt.service.persistence.EntityVersionEquipmentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityWayToPayLocalService" class="com.consistent.ucwrt.service.impl.EntityWayToPayLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityWayToPayService" class="com.consistent.ucwrt.service.impl.EntityWayToPayServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityWayToPayPersistence" class="com.consistent.ucwrt.service.persistence.EntityWayToPayPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityYearModelLocalService" class="com.consistent.ucwrt.service.impl.EntityYearModelLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityYearModelService" class="com.consistent.ucwrt.service.impl.EntityYearModelServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityYearModelPersistence" class="com.consistent.ucwrt.service.persistence.EntityYearModelPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityYearModelClassLocalService" class="com.consistent.ucwrt.service.impl.EntityYearModelClassLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityYearModelClassService" class="com.consistent.ucwrt.service.impl.EntityYearModelClassServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityYearModelClassPersistence" class="com.consistent.ucwrt.service.persistence.EntityYearModelClassPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+	<bean id="com.consistent.ucwrt.service.EntityZoneLocalService" class="com.consistent.ucwrt.service.impl.EntityZoneLocalServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.EntityZoneService" class="com.consistent.ucwrt.service.impl.EntityZoneServiceImpl" />
+	<bean id="com.consistent.ucwrt.service.persistence.EntityZonePersistence" class="com.consistent.ucwrt.service.persistence.EntityZonePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="ucwrtDataSource" />
+		<property name="sessionFactory" ref="ucwrtSessionFactory" />
+	</bean>
+</beans>

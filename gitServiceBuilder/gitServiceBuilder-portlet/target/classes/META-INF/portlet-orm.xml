@@ -1,0 +1,591 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityAddressModelImpl">
+		<attributes>
+			<id name="addressId" />
+			<basic name="street" />
+			<basic name="interiorNumber" />
+			<basic name="exteriorNumber" />
+			<basic name="clientId" />
+			<basic name="municipalId" />
+			<basic name="stateId" />
+			<basic name="suburbId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityBrandModelImpl">
+		<attributes>
+			<id name="brandId" />
+			<basic name="brandName" />
+			<basic name="brandDescription" />
+			<basic name="brandRegistrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="registerData" />
+			<basic name="responsibleUser" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityBusinessBrandModelImpl">
+		<attributes>
+			<id name="businessBrandName" />
+			<basic name="descriptionBusinessBrand" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityClassModelImpl">
+		<attributes>
+			<id name="classId" />
+			<basic name="className" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityCustomerModelImpl">
+		<attributes>
+			<id name="clientId" />
+			<basic name="firstName" />
+			<basic name="lastName" />
+			<basic name="secondLastName" />
+			<basic name="email" />
+			<basic name="rfc" />
+			<basic name="cellPhone" />
+			<basic name="legalPersonality" />
+			<basic name="personType" />
+			<basic name="phone" />
+			<basic name="registrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="comments" />
+			<basic name="dealerId" />
+			<basic name="businessBrandName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityDealerModelImpl">
+		<attributes>
+			<id name="dealerId" />
+			<basic name="dealerName" />
+			<basic name="guaranteed" />
+			<basic name="generalManagerName" />
+			<basic name="shareholderName" />
+			<basic name="mailShareholder" />
+			<basic name="mailGeneralManager" />
+			<basic name="businessBrandName" />
+			<basic name="zoneName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityDepartmentModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityDepartmentPK" />
+		<attributes>
+			<id name="departmentId" />
+			<id name="departmentName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityEmployeesModelImpl">
+		<attributes>
+			<id name="employeeId" />
+			<basic name="firstName" />
+			<basic name="lastName" />
+			<basic name="secondLastName" />
+			<basic name="marketStall" />
+			<basic name="department" />
+			<basic name="cellPhone" />
+			<basic name="phone" />
+			<basic name="email" />
+			<basic name="certified" />
+			<basic name="certifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="certificationNumber" />
+			<basic name="registrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="status" />
+			<basic name="comments" />
+			<basic name="departmentId" />
+			<basic name="employmentId" />
+			<basic name="dealerId" />
+			<basic name="businessBrandName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityEmploymentModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityEmploymentPK" />
+		<attributes>
+			<id name="employmentId" />
+			<id name="employmentName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityEquipmentModelImpl">
+		<attributes>
+			<id name="equipmentId" />
+			<basic name="equipmentDescription" />
+			<basic name="equipmentPurchasePrice" />
+			<basic name="equipmentPurchasePriceDll" />
+			<basic name="equipmentSalePrice" />
+			<basic name="status" />
+			<basic name="modelId" />
+			<basic name="brandId" />
+			<basic name="yearModel" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityEventModelImpl">
+		<attributes>
+			<id name="eventId" />
+			<basic name="eventName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityGParameterModelImpl">
+		<attributes>
+			<id name="parameterName" />
+			<basic name="value" />
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityIntervalosModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityIntervalosPK" />
+		<attributes>
+			<id name="startKilometer" />
+			<id name="finishKilometers" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityInventoryModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityInventoryPK" />
+		<attributes>
+			<id name="inventoryId" />
+			<id name="dealerId" />
+			<id name="businessBrandName" />
+			<id name="versionId" />
+			<id name="yearModel" />
+			<id name="brandId" />
+			<id name="modelId" />
+			<basic name="carExchange" />
+			<basic name="chasis" />
+			<basic name="kilometer" />
+			<basic name="numberDoors" />
+			<basic name="purchasePrice" />
+			<basic name="damage" />
+			<basic name="estimatedSalePrice" />
+			<basic name="estimatedGrossProfit" />
+			<basic name="dateAdmission">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="selfCertified" />
+			<basic name="inventoryRegistrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="whatProcessDischarged" />
+			<basic name="engineLiters" />
+			<basic name="transmission" />
+			<basic name="location" />
+			<basic name="hp" />
+			<basic name="carToConsignment" />
+			<basic name="comments" />
+			<basic name="status" />
+			<basic name="color" />
+			<basic name="daysSpentInventory" />
+			<basic name="suggestedPricePurchase" />
+			<basic name="suggestedSalePrice" />
+			<basic name="versionPricePurchaseSale" />
+			<basic name="statusName" />
+			<basic name="sourceSupplyId" />
+			<basic name="inventoryClasificationId" />
+			<basic name="saleId" />
+			<basic name="tradeInId" />
+			<basic name="employeeId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityInventoryClasificationModelImpl">
+		<attributes>
+			<id name="inventoryClasificationId" />
+			<basic name="inventoryClasification" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityModelModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityModelPK" />
+		<attributes>
+			<id name="modelId" />
+			<id name="brandId" />
+			<id name="yearModel" />
+			<basic name="modelName" />
+			<basic name="modelDescription" />
+			<basic name="modelRegistrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modelRegisterData" />
+			<basic name="modelResponsibleUser" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityMonthlySalesGoalModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityMonthlySalesGoalPK" />
+		<attributes>
+			<id name="year" />
+			<id name="dealerId" />
+			<id name="businessBrandName" />
+			<basic name="descriptionMonthlyGoal" />
+			<basic name="objectiveAnnual" />
+			<basic name="januaryGoal" />
+			<basic name="februaryGoal" />
+			<basic name="marchGoal" />
+			<basic name="aprilGoal" />
+			<basic name="mayGoal" />
+			<basic name="juneGoal" />
+			<basic name="julyGoal" />
+			<basic name="augustGoal" />
+			<basic name="septemberGoal" />
+			<basic name="octoberGoal" />
+			<basic name="novemberGoal" />
+			<basic name="decemberGoal" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityMunicipalityModelImpl">
+		<attributes>
+			<id name="municipalId" />
+			<basic name="municipalName" />
+			<basic name="stateId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityProspectionModelImpl">
+		<attributes>
+			<id name="prospectionId" />
+			<basic name="prospectionName" />
+			<basic name="eventId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntitySaleModelImpl">
+		<attributes>
+			<id name="saleId" />
+			<basic name="confirmBySale" />
+			<basic name="deliveryDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="assurantCertificate" />
+			<basic name="extendedWarranty" />
+			<basic name="realGrossProfit" />
+			<basic name="finalSalePrice" />
+			<basic name="clientId" />
+			<basic name="employeeId" />
+			<basic name="salesPlaceId" />
+			<basic name="prospectionId" />
+			<basic name="wayPayId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntitySalesPlaceModelImpl">
+		<attributes>
+			<id name="salesPlaceId" />
+			<basic name="salePlaceName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntitySourceOfSupplyModelImpl">
+		<attributes>
+			<id name="sourceSupplyId" />
+			<basic name="sourceOfSupply" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityStateModelImpl">
+		<attributes>
+			<id name="stateId" />
+			<basic name="stateName" />
+			<basic name="capitalName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityStatusModelImpl">
+		<attributes>
+			<id name="statusName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntitySuburbModelImpl">
+		<attributes>
+			<id name="suburbId" />
+			<basic name="suburbName" />
+			<basic name="postalCode" />
+			<basic name="municipalId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityVersionAutoModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityVersionAutoPK" />
+		<attributes>
+			<id name="versionId" />
+			<id name="modelId" />
+			<id name="brandId" />
+			<id name="yearModel" />
+			<basic name="versionName" />
+			<basic name="versionRegistrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="versionResponsibleUser" />
+			<basic name="versionRegisterData" />
+			<basic name="purchasePrice" />
+			<basic name="salePrice" />
+			<basic name="purchasePriceDll" />
+			<basic name="typeload" />
+			<basic name="colorName" />
+			<basic name="classId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityVersionEquipmentModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityVersionEquipmentPK" />
+		<attributes>
+			<id name="equipmentId" />
+			<id name="versionId" />
+			<id name="modelId" />
+			<id name="brandName" />
+			<id name="yearModel" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityWayToPayModelImpl">
+		<attributes>
+			<id name="wayPayId" />
+			<basic name="payName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityYearModelModelImpl">
+		<attributes>
+			<id name="yearModel" />
+			<basic name="yearModelRegistrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="yearModelRegisterData" />
+			<basic name="yModelResponsibleUser" />
+			<basic name="yearModelDescription" />
+			<transient name="YModelResponsibleUser" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityYearModelClassModelImpl">
+		<id-class class="com.consistent.ucwrt.service.persistence.EntityYearModelClassPK" />
+		<attributes>
+			<id name="classId" />
+			<id name="yearModel" />
+			<id name="startKilometer" />
+			<id name="finishKilometers" />
+			<basic name="price" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.consistent.ucwrt.model.impl.EntityZoneModelImpl">
+		<attributes>
+			<id name="zoneName" />
+			<basic name="descriptionZone" />
+			<basic name="userZoneManager" />
+			<basic name="userSalesAreaManager" />
+			<basic name="userRegionalAreaManager" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.consistent.ucwrt.model.impl.EntityAddressImpl" name="EntityAddress">
+		<table name="Address" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityBrandImpl" name="EntityBrand">
+		<table name="Brand" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityBusinessBrandImpl" name="EntityBusinessBrand">
+		<table name="BusinessBrand" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityClassImpl" name="EntityClass">
+		<table name="Class" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityCustomerImpl" name="EntityCustomer">
+		<table name="Customer" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityDealerImpl" name="EntityDealer">
+		<table name="Dealer" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityDepartmentImpl" name="EntityDepartment">
+		<table name="Department" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityEmployeesImpl" name="EntityEmployees">
+		<table name="Employees" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityEmploymentImpl" name="EntityEmployment">
+		<table name="Employment" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityEquipmentImpl" name="EntityEquipment">
+		<table name="Equipment" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityEventImpl" name="EntityEvent">
+		<table name="Event" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityGParameterImpl" name="EntityGParameter">
+		<table name="GParameter" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityIntervalosImpl" name="EntityIntervalos">
+		<table name="Intervalos" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityInventoryImpl" name="EntityInventory">
+		<table name="Inventory" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityInventoryClasificationImpl" name="EntityInventoryClasification">
+		<table name="InventoryClasification" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityModelImpl" name="EntityModel">
+		<table name="Model" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityMonthlySalesGoalImpl" name="EntityMonthlySalesGoal">
+		<table name="MonthlySalesGoal" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityMunicipalityImpl" name="EntityMunicipality">
+		<table name="Municipality" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityProspectionImpl" name="EntityProspection">
+		<table name="Prospection" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntitySaleImpl" name="EntitySale">
+		<table name="Sale" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntitySalesPlaceImpl" name="EntitySalesPlace">
+		<table name="SalesPlace" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntitySourceOfSupplyImpl" name="EntitySourceOfSupply">
+		<table name="SourceOfSupply" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityStateImpl" name="EntityState">
+		<table name="State" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityStatusImpl" name="EntityStatus">
+		<table name="Status" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntitySuburbImpl" name="EntitySuburb">
+		<table name="Suburb" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityVersionAutoImpl" name="EntityVersionAuto">
+		<table name="Version" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityVersionEquipmentImpl" name="EntityVersionEquipment">
+		<table name="VersionEquipment" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityWayToPayImpl" name="EntityWayToPay">
+		<table name="WayToPay" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityYearModelImpl" name="EntityYearModel">
+		<table name="YearModel" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityYearModelClassImpl" name="EntityYearModelClass">
+		<table name="YearModelClass" />
+		<attributes />
+	</entity>
+	<entity class="com.consistent.ucwrt.model.impl.EntityZoneImpl" name="EntityZone">
+		<table name="Zone" />
+		<attributes />
+	</entity>
+</entity-mappings>

@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.consistent.ucwrt.model.EntityAddress" />
+	<import class="com.consistent.ucwrt.model.EntityBrand" />
+	<import class="com.consistent.ucwrt.model.EntityBusinessBrand" />
+	<import class="com.consistent.ucwrt.model.EntityClass" />
+	<import class="com.consistent.ucwrt.model.EntityCustomer" />
+	<import class="com.consistent.ucwrt.model.EntityDealer" />
+	<import class="com.consistent.ucwrt.model.EntityDepartment" />
+	<import class="com.consistent.ucwrt.model.EntityEmployees" />
+	<import class="com.consistent.ucwrt.model.EntityEmployment" />
+	<import class="com.consistent.ucwrt.model.EntityEquipment" />
+	<import class="com.consistent.ucwrt.model.EntityEvent" />
+	<import class="com.consistent.ucwrt.model.EntityGParameter" />
+	<import class="com.consistent.ucwrt.model.EntityIntervalos" />
+	<import class="com.consistent.ucwrt.model.EntityInventory" />
+	<import class="com.consistent.ucwrt.model.EntityInventoryClasification" />
+	<import class="com.consistent.ucwrt.model.EntityModel" />
+	<import class="com.consistent.ucwrt.model.EntityMonthlySalesGoal" />
+	<import class="com.consistent.ucwrt.model.EntityMunicipality" />
+	<import class="com.consistent.ucwrt.model.EntityProspection" />
+	<import class="com.consistent.ucwrt.model.EntitySale" />
+	<import class="com.consistent.ucwrt.model.EntitySalesPlace" />
+	<import class="com.consistent.ucwrt.model.EntitySourceOfSupply" />
+	<import class="com.consistent.ucwrt.model.EntityState" />
+	<import class="com.consistent.ucwrt.model.EntityStatus" />
+	<import class="com.consistent.ucwrt.model.EntitySuburb" />
+	<import class="com.consistent.ucwrt.model.EntityVersionAuto" />
+	<import class="com.consistent.ucwrt.model.EntityVersionEquipment" />
+	<import class="com.consistent.ucwrt.model.EntityWayToPay" />
+	<import class="com.consistent.ucwrt.model.EntityYearModel" />
+	<import class="com.consistent.ucwrt.model.EntityYearModelClass" />
+	<import class="com.consistent.ucwrt.model.EntityZone" />
+	<class name="com.consistent.ucwrt.model.impl.EntityAddressImpl" table="Address">
+		<cache usage="read-write" />
+		<id name="addressId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="street" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="interiorNumber" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="exteriorNumber" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="clientId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="municipalId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="stateId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="suburbId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityBrandImpl" table="Brand">
+		<cache usage="read-write" />
+		<id name="brandId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="brandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="brandDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="brandRegistrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="registerData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="responsibleUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityBusinessBrandImpl" table="BusinessBrand">
+		<cache usage="read-write" />
+		<id name="businessBrandName" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="descriptionBusinessBrand" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityClassImpl" table="Class">
+		<cache usage="read-write" />
+		<id name="classId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityCustomerImpl" table="Customer">
+		<cache usage="read-write" />
+		<id name="clientId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondLastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rfc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cellPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="legalPersonality" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="personType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dealerId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="businessBrandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityDealerImpl" table="Dealer">
+		<cache usage="read-write" />
+		<id name="dealerId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="dealerName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="guaranteed" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="generalManagerName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="shareholderName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mailShareholder" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mailGeneralManager" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="businessBrandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="zoneName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityDepartmentImpl" table="Department">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityDepartmentPK">
+			<key-property name="departmentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="departmentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityEmployeesImpl" table="Employees">
+		<cache usage="read-write" />
+		<id name="employeeId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondLastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="marketStall" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cellPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="certified" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="certifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="certificationNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="departmentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="employmentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dealerId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="businessBrandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityEmploymentImpl" table="Employment">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityEmploymentPK">
+			<key-property name="employmentId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="employmentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityEquipmentImpl" table="Equipment">
+		<cache usage="read-write" />
+		<id name="equipmentId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="equipmentDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="equipmentPurchasePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="equipmentPurchasePriceDll" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="equipmentSalePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="modelId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="brandId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityEventImpl" table="Event">
+		<cache usage="read-write" />
+		<id name="eventId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="eventName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityGParameterImpl" table="GParameter">
+		<cache usage="read-write" />
+		<id name="parameterName" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="value" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityIntervalosImpl" table="Intervalos">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityIntervalosPK">
+			<key-property name="startKilometer" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="finishKilometers" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityInventoryImpl" table="Inventory">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityInventoryPK">
+			<key-property name="inventoryId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="dealerId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="businessBrandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="versionId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="brandId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="modelId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+		<property name="carExchange" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="chasis" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kilometer" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="numberDoors" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="purchasePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="damage" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="estimatedSalePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="estimatedGrossProfit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="dateAdmission" type="org.hibernate.type.TimestampType" />
+		<property name="selfCertified" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inventoryRegistrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="whatProcessDischarged" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="engineLiters" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="transmission" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="location" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hp" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="carToConsignment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="color" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="daysSpentInventory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="suggestedPricePurchase" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="suggestedSalePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="versionPricePurchaseSale" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sourceSupplyId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="inventoryClasificationId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="saleId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tradeInId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="employeeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityInventoryClasificationImpl" table="InventoryClasification">
+		<cache usage="read-write" />
+		<id name="inventoryClasificationId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="inventoryClasification" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityModelImpl" table="Model">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityModelPK">
+			<key-property name="modelId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="brandId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+		<property name="modelName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="modelDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="modelRegistrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="modelRegisterData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="modelResponsibleUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityMonthlySalesGoalImpl" table="MonthlySalesGoal">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityMonthlySalesGoalPK">
+			<key-property name="year" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="dealerId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="businessBrandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="descriptionMonthlyGoal" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="objectiveAnnual" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="januaryGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="februaryGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="marchGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="aprilGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="mayGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="juneGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="julyGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="augustGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="septemberGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="octoberGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="novemberGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="decemberGoal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityMunicipalityImpl" table="Municipality">
+		<cache usage="read-write" />
+		<id name="municipalId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="municipalName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="stateId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityProspectionImpl" table="Prospection">
+		<cache usage="read-write" />
+		<id name="prospectionId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="prospectionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eventId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntitySaleImpl" table="Sale">
+		<id name="saleId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="confirmBySale" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="deliveryDate" type="org.hibernate.type.TimestampType" />
+		<property name="assurantCertificate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="extendedWarranty" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="realGrossProfit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="finalSalePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="clientId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="employeeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="salesPlaceId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="prospectionId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="wayPayId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntitySalesPlaceImpl" table="SalesPlace">
+		<cache usage="read-write" />
+		<id name="salesPlaceId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="salePlaceName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntitySourceOfSupplyImpl" table="SourceOfSupply">
+		<cache usage="read-write" />
+		<id name="sourceSupplyId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="sourceOfSupply" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityStateImpl" table="State">
+		<cache usage="read-write" />
+		<id name="stateId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="stateName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="capitalName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityStatusImpl" table="Status">
+		<cache usage="read-write" />
+		<id name="statusName" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntitySuburbImpl" table="Suburb">
+		<cache usage="read-write" />
+		<id name="suburbId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="suburbName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="postalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="municipalId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityVersionAutoImpl" table="Version">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityVersionAutoPK">
+			<key-property name="versionId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="modelId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="brandId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+		<property name="versionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="versionRegistrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="versionResponsibleUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="versionRegisterData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="purchasePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="salePrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="purchasePriceDll" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="typeload" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="colorName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="classId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityVersionEquipmentImpl" table="VersionEquipment">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityVersionEquipmentPK">
+			<key-property name="equipmentId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="versionId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="modelId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="brandName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityWayToPayImpl" table="WayToPay">
+		<cache usage="read-write" />
+		<id name="wayPayId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="payName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityYearModelImpl" table="YearModel">
+		<cache usage="read-write" />
+		<id name="yearModel" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="yearModelRegistrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="yearModelRegisterData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="yModelResponsibleUser" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="yearModelDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityYearModelClassImpl" table="YearModelClass">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.consistent.ucwrt.service.persistence.EntityYearModelClassPK">
+			<key-property name="classId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="yearModel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="startKilometer" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="finishKilometers" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="com.consistent.ucwrt.model.impl.EntityZoneImpl" table="Zone">
+		<cache usage="read-write" />
+		<id name="zoneName" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="descriptionZone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userZoneManager" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userSalesAreaManager" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userRegionalAreaManager" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
