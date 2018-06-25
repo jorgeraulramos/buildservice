@@ -10,6 +10,6 @@ public class EntityModelFinderImpl {
 	}
 
 	public void getData3() {
-		
+		System.out.println("Zoids");
 	}
 }
